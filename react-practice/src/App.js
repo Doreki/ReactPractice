@@ -1,30 +1,23 @@
-
-import { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  } from "react-router-dom";// Todo useState만들어준다.
+  import Home from "./routes/Home"
+  import Detail from "./routes/Detail";
 function App() {
-  const [toDo, setToDo] = useState("");
-  const [toDos, setToDos] = useState([]);
-  const onChange = (event) => setToDo(event.target.value);
-  const onSubmit = (event) => {
-    event.preventDefault();
-    if(toDo === "") {
-      return;
-    }
-    setToDo("");
-    setToDos((currentArray) => [toDo, ...currentArray]);
-  } ;
   return (
-    <div>
-      <h1>My to Dos ({toDos.length})</h1>
-      <form onSubmit={onSubmit}>
-        <input onChange={onChange} value={toDo} type="text" placeholder="Write your to do" />
-        <button>Add to do</button>
-      </form>
-      <hr />
-      {toDos.map((item, index) => 
-      <li key={index}>{item}</li>
-      )}
-    </div>
-  )
+  <Router>
+    <Switch>
+      <Route path="/movie">
+        <Detail />
+      </Route>
+      <Route path="/">
+        <Home />
+      </Route>
+    </Switch>
+    </Router>
+  );
 }
 
 export default App;
