@@ -1,3 +1,3 @@
-const calc = require("./calc");
+const randomColor = require("randomcolor");
 
-console.log(calc.add(1, 2));
+console.log(randomColor());
