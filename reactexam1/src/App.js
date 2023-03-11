@@ -1,32 +1,14 @@
 import React from "react";
 // import "./App.css";
 
+import Counter from "./Counter";
 import MyHeader from "./MyHeader";
 
 function App() {
-  let name = "임도현";
-
-  const style = {
-    App: {
-      backgroundColor: "black",
-    },
-    h2: {
-      color: "red",
-    },
-    bold_text: {
-      color: "green",
-    },
-  };
-
-  const number = 5;
-
   return (
-    <div style={style.App}>
+    <div>
       <MyHeader />
-      <h2 style={style.h2}>안녕 {name}</h2>
-      <b id="bold_text" style={style.bold_text}>
-        {number} 는 : {number % 2 === 0 ? "짝수" : "홀수"}
-      </b>
+      <Counter></Counter>
     </div>
   );
 }
